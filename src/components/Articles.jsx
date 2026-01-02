@@ -33,7 +33,7 @@ const InterestSection = ({ title, icon, iconColor, articles }) => {
   );
 };
 
-const InterestsGrid = () => {
+const Articles = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -52,8 +52,8 @@ const InterestsGrid = () => {
 
   if (loading) {
     return (
-      <section id="interest-details" className="container pb-5">
-        <h2 className="text-center mb-5 fw-bold">Interest area articles</h2>
+      <section id="interest-details" className="container py-2">
+        <h2 className="text-center mb-5 fw-bold">Articles</h2>
         <div className="text-center">
           <div className="spinner-border" role="status">
             <span className="visually-hidden">Loading...</span>
@@ -64,7 +64,7 @@ const InterestsGrid = () => {
   }
 
   return (
-    <section id="interest-details" className="container pb-5">
+    <section id="interest-details" className="container py-2">
       <h2 className="text-center mb-5 fw-bold">Interest area articles</h2>
       {data.map((section, index) => (
         <InterestSection
@@ -79,4 +79,4 @@ const InterestsGrid = () => {
   );
 };
 
-export default InterestsGrid;
+export default Articles;

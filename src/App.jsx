@@ -2,8 +2,9 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Interests from './components/Interests';
-import InterestsGrid from './components/InterestsGrid';
 import Footer from './components/Footer';
+import Articles from "./components/Articles";
+import Links from './components/Links';
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       <main>
         <Hero />
         <Interests />
-        <InterestsGrid />
+        <Articles />
+        <Links />
       </main>
       <Footer />
     </div>

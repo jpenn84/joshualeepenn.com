@@ -29,7 +29,7 @@ const interests = [
 
 const Interests = () => {
   return (
-    <section id="interests" className="py-5 bg-light">
+    <section id="interests" className="pb-5 circuit-bg-fade">
       <div className="container">
         <h2 className="text-center mb-5 fw-bold">Core Interests</h2>
         <div className="row g-4">
