@@ -1,6 +1,6 @@
 import React from 'react';
 
-const StoryCard = ({ title, text, image }) => {
+const ArticleCard = ({ title, text, image }) => {
   return (
     <div className="card shadow-sm overflow-hidden">
       {image && (
@@ -23,4 +23,4 @@ const StoryCard = ({ title, text, image }) => {
   );
 };
 
-export default StoryCard;
+export default ArticleCard;

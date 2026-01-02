@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
-import StoryCard from './StoryCard';
+import ArticleCard from './ArticleCard';
 
-const InterestSection = ({ title, icon, iconColor, stories }) => {
+const InterestSection = ({ title, icon, iconColor, articles }) => {
   const scrollRef = useRef(null);
 
   const scroll = (direction) => {
@@ -21,8 +21,8 @@ const InterestSection = ({ title, icon, iconColor, stories }) => {
           <i className="fas fa-chevron-left"></i>
         </button>
         <div className="horizontal-scroll" ref={scrollRef}>
-          {stories.map((story, index) => (
-            <StoryCard key={index} title={story.title} text={story.text} image={story.image} />
+          {articles.map((article, index) => (
+            <ArticleCard key={index} title={article.title} text={article.text} image={article.image} />
           ))}
         </div>
         <button className="scroll-zone scroll-zone-right" onClick={() => scroll(1)}>
@@ -53,7 +53,7 @@ const InterestsGrid = () => {
   if (loading) {
     return (
       <section id="interest-details" className="container pb-5">
-        <h2 className="text-center mb-5 fw-bold">Interest Stories</h2>
+        <h2 className="text-center mb-5 fw-bold">Interest area articles</h2>
         <div className="text-center">
           <div className="spinner-border" role="status">
             <span className="visually-hidden">Loading...</span>
@@ -65,14 +65,14 @@ const InterestsGrid = () => {
 
   return (
     <section id="interest-details" className="container pb-5">
-      <h2 className="text-center mb-5 fw-bold">Interest Stories</h2>
+      <h2 className="text-center mb-5 fw-bold">Interest area articles</h2>
       {data.map((section, index) => (
         <InterestSection
           key={index}
           title={section.title}
           icon={section.icon}
           iconColor={section.iconColor}
-          stories={section.stories}
+          articles={section.articles}
         />
       ))}
     </section>
