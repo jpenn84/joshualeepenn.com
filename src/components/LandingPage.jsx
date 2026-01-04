@@ -4,12 +4,12 @@ import Interests from './Interests';
 import Articles from './Articles';
 import Links from './Links';
 
-const LandingPage = () => {
+const LandingPage = ({ onNavigate }) => {
   return (
     <>
       <Hero />
       <Interests />
-      <Articles />
+      <Articles onNavigate={onNavigate} />
       <Links />
     </>
   );

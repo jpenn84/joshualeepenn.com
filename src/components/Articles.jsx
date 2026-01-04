@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import ArticleCard from './ArticleCard';
 
-const InterestSection = ({ title, icon, iconColor, articles }) => {
+const InterestSection = ({ title, icon, iconColor, articles, onNavigate }) => {
   const scrollRef = useRef(null);
 
   const scroll = (direction) => {
@@ -22,7 +22,14 @@ const InterestSection = ({ title, icon, iconColor, articles }) => {
         </button>
         <div className="horizontal-scroll" ref={scrollRef}>
           {articles.map((article, index) => (
-            <ArticleCard key={index} title={article.title} text={article.text} image={article.image} />
+            <ArticleCard
+              key={index}
+              title={article.title}
+              text={article.text}
+              image={article.image}
+              source={article.source}
+              onNavigate={onNavigate}
+            />
           ))}
         </div>
         <button className="scroll-zone scroll-zone-right" onClick={() => scroll(1)}>
@@ -33,12 +40,12 @@ const InterestSection = ({ title, icon, iconColor, articles }) => {
   );
 };
 
-const Articles = () => {
+const Articles = ({ onNavigate }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://jpenn84.github.io/data/joshualeepenn.com/articles.json')
+    fetch('https://jpenn84.github.io/data/joshualeepenn.com/articles/articles.json')
       .then(response => response.json())
       .then(data => {
         setData(data);
@@ -73,6 +80,7 @@ const Articles = () => {
           icon={section.icon}
           iconColor={section.iconColor}
           articles={section.articles}
+          onNavigate={onNavigate}
         />
       ))}
     </section>
