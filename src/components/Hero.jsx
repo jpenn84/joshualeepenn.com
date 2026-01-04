@@ -12,7 +12,7 @@ const Hero = () => {
           style={{ width: '100%', maxWidth: '540px', height: 'auto', aspectRatio: '1/1', objectFit: 'cover' }}
         />
         <h1 className="display-4 fw-bold">Hello, I'm Joshua Lee Penn</h1>
-        <p className="lead">Multidisciplinary Enthusiast, Building software, collecting history, navigating cities, and soldering circuits.</p>
+        <p className="lead">Software Engineer, Numismatist, Mass Transit Nerd, Electronics Hobbyist</p>
       </div>
     </section>
   );
