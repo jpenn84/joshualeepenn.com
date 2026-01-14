@@ -35,6 +35,7 @@
     background-size: 100px 100px;
     opacity: 0.5;
     pointer-events: none;
+    z-index: 0;
 }
 
 /* UI Elements */
