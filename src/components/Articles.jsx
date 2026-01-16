@@ -28,6 +28,7 @@ const InterestSection = ({ title, icon, iconColor, articles, onNavigate }) => {
               text={article.text}
               image={article.image}
               source={article.source}
+              topics={article.topics}
               onNavigate={onNavigate}
             />
           ))}
