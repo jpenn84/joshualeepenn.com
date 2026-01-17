@@ -1,45 +1,5 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import ArticleCard from './ArticleCard';
-
-const InterestSection = ({ title, icon, iconColor, articles, onNavigate }) => {
-  const scrollRef = useRef(null);
-
-  const scroll = (direction) => {
-    if (scrollRef.current) {
-      const scrollAmount = 300 + 24; // Card width + gap
-      scrollRef.current.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
-    }
-  };
-
-  return (
-    <div className="mb-5">
-      <h2 className="text-center mb-4">
-        <i className={`fas ${icon} me-2 ${iconColor}`}></i>{title}
-      </h2>
-      <div className="horizontal-scroll-wrapper bg-light rounded shadow-sm">
-        <button className="scroll-zone scroll-zone-left" onClick={() => scroll(-1)}>
-          <i className="fas fa-chevron-left"></i>
-        </button>
-        <div className="horizontal-scroll" ref={scrollRef}>
-          {articles.map((article, index) => (
-            <ArticleCard
-              key={index}
-              title={article.title}
-              text={article.text}
-              image={article.image}
-              source={article.source}
-              topics={article.topics}
-              onNavigate={onNavigate}
-            />
-          ))}
-        </div>
-        <button className="scroll-zone scroll-zone-right" onClick={() => scroll(1)}>
-          <i className="fas fa-chevron-right"></i>
-        </button>
-      </div>
-    </div>
-  );
-};
 
 const Articles = ({ onNavigate }) => {
   const [data, setData] = useState([]);
@@ -71,19 +31,26 @@ const Articles = ({ onNavigate }) => {
     );
   }
 
+  // Flatten all articles from all sections into a single array
+  const allArticles = data.flatMap(section => section.articles);
+
   return (
     <section id="interest-details" className="container py-2">
-      <h2 className="text-center mb-5 fw-bold">Interest area articles</h2>
-      {data.map((section, index) => (
-        <InterestSection
-          key={index}
-          title={section.title}
-          icon={section.icon}
-          iconColor={section.iconColor}
-          articles={section.articles}
-          onNavigate={onNavigate}
-        />
-      ))}
+      <h2 className="text-center mb-5 fw-bold">Articles</h2>
+      <div className="row g-4">
+        {allArticles.map((article, index) => (
+          <div key={index} className="col-md-6 col-lg-3">
+            <ArticleCard
+              title={article.title}
+              text={article.text}
+              image={article.image}
+              source={article.source}
+              topics={article.topics}
+              onNavigate={onNavigate}
+            />
+          </div>
+        ))}
+      </div>
     </section>
   );
 };
