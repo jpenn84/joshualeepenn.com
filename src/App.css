@@ -80,35 +80,6 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Horizontal Scroll Layout */
-.horizontal-scroll-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-.horizontal-scroll {
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-    padding: 1rem 0;
-    margin-left: 3.5rem;
-    margin-right: 3.5rem;
-    gap: 1.4rem;
-}
-.horizontal-scroll::-webkit-scrollbar {
-    display: none; /* Chrome, Safari and Opera */
-}
-.horizontal-scroll .card {
-    min-width: 300px;
-    max-width: 300px;
-    height: 380px !important;
-    flex-shrink: 0;
-    scroll-snap-align: center;
-}
-
 .text-truncate-multi {
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -130,37 +101,4 @@ html {
 
 .line-clamp-10 {
     -webkit-line-clamp: 10;
-}
-
-
-.scroll-zone {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 3rem;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(2px);
-    cursor: pointer;
-    transition: background 0.3s;
-    border: none;
-    outline: none;
-}
-.scroll-zone:hover {
-    background: rgba(0, 0, 0, 0.1);
-}
-.scroll-zone-left {
-    left: 0;
-    border-radius: 8px 0 0 8px;
-}
-.scroll-zone-right {
-    right: 0;
-    border-radius: 0 8px 8px 0;
-}
-.scroll-zone i {
-    font-size: 2rem;
-    color: rgba(0, 0, 0, 0.5);
 }
