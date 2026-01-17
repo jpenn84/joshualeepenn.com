@@ -9,7 +9,7 @@ const ArticleCard = ({ title, text, image, source, topics, onNavigate }) => {
 
   const cardClass = source ? 'card shadow-sm overflow-hidden' : 'card shadow-sm overflow-hidden';
   const cardStyle = { 
-    height: '25rem',
+    height: '22rem',
     ...(source ? { cursor: 'pointer' } : {})
   };
 
@@ -20,7 +20,7 @@ const ArticleCard = ({ title, text, image, source, topics, onNavigate }) => {
           src={image}
           className="card-img-top"
           alt={title}
-          style={{ height: '160px', objectFit: 'cover', flexShrink: 0 }}
+          style={{ height: '150px', objectFit: 'cover', flexShrink: 0 }}
         />
       )}
       <div className="card-body d-flex flex-column overflow-hidden">
@@ -28,7 +28,7 @@ const ArticleCard = ({ title, text, image, source, topics, onNavigate }) => {
           {title}
         </h5>
         {topics && topics.length > 0 && (
-          <div className="mb-2 flex-shrink-0">
+          <div className="mb-1 flex-shrink-0">
             {topics.map((topic, index) => (
               <span key={index} className="badge rounded-pill text-bg-info me-1">
                 {topic}
@@ -36,7 +36,7 @@ const ArticleCard = ({ title, text, image, source, topics, onNavigate }) => {
             ))}
           </div>
         )}
-        <p className="card-text text-muted text-truncate-multi flex-grow-1" style={{ overflow: 'hidden', textOverflow: 'ellipsis' }}>
+        <p className="card-text text-muted text-truncate-multi flex-grow-1" style={{ WebkitLineClamp: 4 }}>
           {text}
         </p>
       </div>

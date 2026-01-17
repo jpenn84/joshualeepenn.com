@@ -36,7 +36,7 @@ const Articles = ({ onNavigate }) => {
 
   return (
     <section id="interest-details" className="container py-2">
-      <h2 className="text-center mb-5 fw-bold">Articles</h2>
+      <h2 className="text-center m-3 fw-bold">Articles</h2>
       <div className="row g-4">
         {allArticles.map((article, index) => (
           <div key={index} className="col-md-6 col-lg-3">

@@ -31,7 +31,7 @@ const Interests = () => {
   return (
     <section id="interests" className="pb-5 circuit-bg-fade">
       <div className="container">
-        <h2 className="text-center mb-5 fw-bold">Core Interests</h2>
+        <h2 className="text-center mb-3 fw-bold">Core Interests</h2>
         <div className="row g-4">
           {interests.map((interest, index) => (
             <div key={index} className="col-md-6 col-lg-3">
