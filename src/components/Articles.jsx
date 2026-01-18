@@ -35,7 +35,7 @@ const Articles = ({ onNavigate }) => {
   const allArticles = data.flatMap(section => section.articles);
 
   return (
-    <section id="interest-details" className="container py-2">
+    <section id="interest-details" className="container pt-2 pb-3">
       <h2 className="text-center m-3 fw-bold">Articles</h2>
       <div className="row g-4">
         {allArticles.map((article, index) => (
