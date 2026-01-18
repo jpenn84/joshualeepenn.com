@@ -4,7 +4,7 @@ import mainImage from '../assets/main.png';
 const Hero = () => {
   return (
     <section id="about" className="text-center text-white circuit-bg">
-      <div className="container py-5 position-relative">
+      <div className="container pt-4 pb-3 position-relative">
         <img
           src={mainImage}
           alt="Joshua Lee Penn"

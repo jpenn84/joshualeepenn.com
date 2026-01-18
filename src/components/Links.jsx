@@ -18,8 +18,8 @@ const links = [
 const Links = () => {
   return (
     <section id="links" className="pt-3 pb-5 bg-light">
-      <div className="container">
-        <h2 className="text-center mb-5 fw-bold">Links</h2>
+      <div className="container pb-3">
+        <h2 className="text-center m-3 fw-bold">Links</h2>
         <div className="row g-4">
           {links.map((link, index) => (
             <div key={index} className="col-md-6 col-lg-6">
